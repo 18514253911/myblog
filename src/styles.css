@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #34495e;
+    background-color: #fff;
+    margin: 0;
+}

@@ -1,0 +1,40 @@
+.main-nav {
+    background: #fff;
+    height: 50px;
+    min-height: 50px;
+    padding: 0;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.blog-title {
+    height: 50px;
+    line-height: 50px;
+    width: 200px;
+    float: left;
+    font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.menu-list {
+    height: 50px;
+    right: 10px;
+    padding-left: 50%;
+    list-style-type: none;
+}
+
+.item-menu-li {
+    float: left;
+    height: 100%;
+    line-height: 50px;
+    margin: 0 10px;
+}
+
+.item-menu-a {
+    height: 100%;
+    text-decoration: none;
+}
+
+.item-menu-a:hover {
+    border-bottom: 3px solid #42b983;
+}

@@ -1,0 +1,30 @@
+<div class="navbar navbar-fixed-top main-nav" role="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="blog-title">
+                    闫长路的个人空间
+                </div>
+            </div>
+            <div class="col-md-8">
+                <ul class="menu-list">
+                    <li *ngFor="let item of menus" class="item-menu-li"><a routerLink="item.path" routerLinkActive="active" class="item-menu-a">{{item.display}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 主体内容区域 -->
+<div class="container main-container">
+    <router-outlet></router-outlet>
+</div>
+<!-- 底部区域 -->
+<div class="footer bs-footer">
+    <div class="container">
+        <div class="row">
+            <p>
+                个人空间
+            </p>
+        </div>
+    </div>
+</div>

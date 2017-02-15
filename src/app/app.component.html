@@ -15,16 +15,6 @@
     </div>
 </div>
 <!-- 主体内容区域 -->
-<div class="container main-container">
+<div class="container main-container" [ngStyle]="{'height': height+'px'}">
     <router-outlet></router-outlet>
-</div>
-<!-- 底部区域 -->
-<div class="footer bs-footer">
-    <div class="container">
-        <div class="row">
-            <p>
-                个人空间
-            </p>
-        </div>
-    </div>
 </div>

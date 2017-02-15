@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  //浏览器的高度
+  height=window.innerHeight;
   title = 'app works!';
   public menus=[{
       display:"首页",

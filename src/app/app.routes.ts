@@ -1,5 +1,6 @@
-import{HomeComponent} from './home/home.component'
-
+import { RouterModule } from '@angular/router';
+import {HomeComponent} from './home/home.component'
+import {CompatibilityComponent} from './compatibility/compatibility.component'
 
 export const appRoutes=[{
         path:'',
@@ -8,5 +9,9 @@ export const appRoutes=[{
     },{
         path:'home',
 	    component:HomeComponent
+    },{
+        path:'compatibility',
+	    component:CompatibilityComponent
     }
+    
 ]

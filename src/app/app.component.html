@@ -3,12 +3,12 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="blog-title">
-                    闫长路的个人空间
+                    <a routerLink="compatibility" routerLinkActive="active">dfdsafdasf</a>
                 </div>
             </div>
             <div class="col-md-8">
                 <ul class="menu-list">
-                    <li *ngFor="let item of menus" class="item-menu-li"><a routerLink="item.path" routerLinkActive="active" class="item-menu-a">{{item.display}}</a></li>
+                    <li *ngFor="let item of menus" class="item-menu-li"><a routerLink={{item.path}} routerLinkActive="active" class="item-menu-a">{{item.display}}</a></li>
                 </ul>
             </div>
         </div>

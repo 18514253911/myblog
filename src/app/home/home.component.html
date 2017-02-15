@@ -1,26 +1,14 @@
-<ul>
-    <li>
-        <div id="a" #a href="#" (click)='change(a)'></div>
-    </li>
-    <li>
-        <div id="b" #b href="#" (click)='change(b)'></div>
-    </li>
-    <li>
-        <div id="c" #c href="#" (click)='change(c)'></div>
-    </li>
-    <li>
-        <div id="d" #d href="#" (click)='change(d)'></div>
-    </li>
-</ul>
-<div id="a" class="home-item" [ngClass]="{'active': obj.a}">
-    <!--[ngStyle]="{'height': height+'px'}"-->
-</div>
-<div id="b" class="home-item" [ngClass]="{'active': obj.b}">
+<div ngFullpage>
+    <div id="a" class="home-item" style="background-color: red">
+        sssss
+    </div>
+    <div id="b" class="home-item" style="background-color: black">
 
-</div>
-<div id="c" class="home-item" [ngClass]="{'active': obj.c}">
+    </div>
+    <div id="c" class="home-item" style="background-color: blue">
 
-</div>
-<div id="d" class="home-item" [ngClass]="{'active': obj.d}">
+    </div>
+    <div id="d" class="home-item" style="background-color: wheat">
 
+    </div>
 </div>

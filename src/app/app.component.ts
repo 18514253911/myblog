@@ -17,7 +17,7 @@ export class AppComponent {
       path:"home"
   },{
       display:"兼容性",
-      path:"home"
+      path:"compatibility"
   },{
       display:"js设计模式",
       path:"home"

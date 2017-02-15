@@ -6,11 +6,15 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import{HomeComponent} from './home/home.component'
+import{CompatibilityComponent} from './compatibility/compatibility.component'
 import { appRoutes } from './app.routes';
+import {ngFullpageDirective} from './directive/fullpage.directive'
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent, 
+    CompatibilityComponent,
+    ngFullpageDirective
   ],
   imports: [
     BrowserModule,

@@ -5,16 +5,20 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import{HomeComponent} from './home/home.component'
-import{CompatibilityComponent} from './compatibility/compatibility.component'
+import{HomeComponent} from './home/home.component';
+import{CompatibilityComponent} from './compatibility/compatibility.component';
 import { appRoutes } from './app.routes';
-import {ngFullpageDirective} from './directive/fullpage.directive'
+import {ngFullpageDirective} from './directive/fullpage.directive';
+import {FullPageService} from './servive/fullpage.service';
+import {ScrollTo} from './directive/scrollTo.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent, 
     CompatibilityComponent,
-    ngFullpageDirective
+    ngFullpageDirective,
+    ScrollTo
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,7 @@ import {ngFullpageDirective} from './directive/fullpage.directive'
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [FullPageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

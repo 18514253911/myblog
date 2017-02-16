@@ -1,5 +1,5 @@
-import {Directive, Input, OnInit,HostListener, ElementRef} from '@angular/core';
-
+import {Directive, Input,Output,EventEmitter, OnInit,HostListener, ElementRef} from '@angular/core';
+import {FullPageService} from '../servive/fullpage.service';
 @Directive({
     selector: `[ngFullpage]`
 })
@@ -8,9 +8,16 @@ export class ngFullpageDirective implements OnInit {
     public itv :any;
     height:number;
     page:number;
+    @Output()
+    public after : EventEmitter<any> = new EventEmitter();
     ngOnInit(): void {
         this.height= window.innerHeight;
-        this.page = this.scrollTop(null)/this.height | 0;
+        window.onload = load;
+        let _this=this;
+        function load (e){
+            _this.page = _this.fullPageService.scrollTop(null)/_this.height | 0;
+            _this.after.emit(_this.page); 
+        }
     }
 
     @HostListener('mousewheel',['$event']) mousewheel(e: WheelEvent){
@@ -22,35 +29,38 @@ export class ngFullpageDirective implements OnInit {
             var max = (document.body.scrollHeight / _this.height | 0) - 1;
             if (_this.page < 0) return _this.page = 0;
             if (_this.page > max) return _this.page = max;
-            _this.move();
+            _this.fullPageService.move(_this.height,_this.page,_this.after,_this);
         }, 100);
         e.preventDefault();
     }
-    constructor(private el: ElementRef) { 
+    constructor(private el: ElementRef,public fullPageService:FullPageService) { 
        
     }
-    move(){
-        var value = this.height * this.page;
-        var diff = this.scrollTop(null) - value;
-        let _this=this;
-        (function callee() {
-            diff = diff / 1.2 | 0;
-            _this.scrollTop(value + diff);
-            if (diff) _this.itv = setTimeout(callee, 16);
-        })();
+    // move(){
+    //     var value = this.height * this.page;
+    //     var diff = this.scrollTop(null) - value;
+    //     let _this=this;
+    //     (function callee() {
+    //         diff = diff / 1.2 | 0;
+    //         _this.scrollTop(value + diff);
+    //         if (diff){
+    //             _this.itv = setTimeout(callee, 16);
+    //         }else{
+    //             _this.afterEvent();
+    //         }
+            
+    //     })();
+    // }
+    
+    // scrollTop(value) {
+    //     if (value == null){
+    //         return Math.max(document.body.scrollTop);
+    //     } 
+    //     else{
+    //        document.body.scrollTop = value;
+    //     } 
+    // }
+    public afterEvent(){
+        this.after.emit();
     }
-    callee(diff:number,value:number) {
-            diff = diff / 1.2 | 0;
-            this.scrollTop( + diff);
-            if (diff) this.itv = setTimeout(this.callee, 16);
-        }
-    scrollTop(value) {
-        if (value == null){
-            return Math.max(document.body.scrollTop);
-        } 
-        else{
-           document.body.scrollTop = value;
-        } 
-    }
-
 }

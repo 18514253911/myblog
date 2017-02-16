@@ -1,14 +1,48 @@
-<div ngFullpage>
-    <div id="a" class="home-item" style="background-color: red">
-        sssss
-    </div>
-    <div id="b" class="home-item" style="background-color: black">
+<div ngFullpage (after)="doAfteer($event)">
+    <div id="a" class="home-item" [ngStyle]="{'height': height+'px'}">
+        <div id="home_content">
+            <div id="home-head">
+                <div id="home_head_content">
+                    <img id="home_photo" src="../../assets/image/photo1.jpg" alt="">
+                </div>
+            </div>
+            <p id="head-motto" class="home-info-introduce"> 努力不一定成功，但不努力一定不会成功</p>
+            <div id="home_info_box">
+                <p class="home-info-introduce" id="home_info1">我叫闫长路</p>
+                <p class="home-info-introduce" id="home_info2">28岁</p>
+                <p class="home-info-introduce" id="home_info3">一名前端研发工程师、WebGis开发工程师</p>
+                <p class="home-info-introduce" id="home_info4">last513894105@163.com</p>
+            </div>
+        </div>
+
 
     </div>
-    <div id="c" class="home-item" style="background-color: blue">
+    <div id="b" class="home-item" [ngStyle]="{'height': height+'px'}">
 
     </div>
-    <div id="d" class="home-item" style="background-color: wheat">
+    <div id="c" class="home-item" [ngStyle]="{'height': height+'px'}">
+
+    </div>
+    <div id="d" class="home-item" [ngStyle]="{'height': height+'px'}">
 
     </div>
 </div>
+<ul>
+    <!--<li (click)="ngClick(0)">1</li>
+    <li (click)="ngClick(1)">2</li>
+    <li (click)="ngClick(2)">3</li>
+    <li (click)="ngClick(3)">4</li>-->
+    <li>
+        <a scrollTo href="#a">1</a>
+    </li>
+    <li>
+        <a scrollTo href="#b">2</a>
+    </li>
+    <li>
+        <a scrollTo href="#c">3</a>
+    </li>
+    <li>
+        <a scrollTo href="#d">4</a>
+    </li>
+
+</ul>

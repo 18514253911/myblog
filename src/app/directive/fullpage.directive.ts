@@ -1,10 +1,10 @@
-import {Directive, Input,Output,EventEmitter, OnInit,HostListener, ElementRef} from '@angular/core';
+import {Directive, Input,Output,EventEmitter, OnInit,HostListener, ElementRef,AfterViewInit } from '@angular/core';
 import {FullPageService} from '../servive/fullpage.service';
 @Directive({
     selector: `[ngFullpage]`
 })
 
-export class ngFullpageDirective implements OnInit {
+export class ngFullpageDirective implements OnInit,AfterViewInit  {
     public itv :any;
     height:number;
     page:number;
@@ -12,14 +12,12 @@ export class ngFullpageDirective implements OnInit {
     public after : EventEmitter<any> = new EventEmitter();
     ngOnInit(): void {
         this.height= window.innerHeight;
-        window.onload = load;
-        let _this=this;
-        function load (e){
-            _this.page = _this.fullPageService.scrollTop(null)/_this.height | 0;
-            _this.after.emit(_this.page); 
-        }
+      
     }
-
+    ngAfterViewInit(): void{
+        this.page = this.fullPageService.scrollTop(null)/this.height | 0;
+        this.after.emit(this.page); 
+    }
     @HostListener('mousewheel',['$event']) mousewheel(e: WheelEvent){
         clearTimeout(this.itv);
         let _this=this;

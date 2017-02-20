@@ -49,14 +49,19 @@
     height: auto;
 }
 
-#home_photo {
+.home_photo {
     position: absolute;
     width: 150px;
     height: 150px;
     border: 2px #CCCCCC solid;
     border-radius: 50%;
 }
-
+#my-photo{
+    transition:opacity 1s ease-in-out;;
+}
+#my-photo:hover{
+    opacity:0;
+}
 #home-head {
     margin: 300px auto 30px;
     width: 1000px;
@@ -77,4 +82,19 @@ ul {
     position: fixed;
     top: 200px;
     right: 50px;
+    li{
+        list-style-type:none;
+        a{
+            position: relative;
+            display: block;
+            margin: 10px 0;
+            width: 20px;
+            height: 20px;
+            background: url(../../assets/image/aside_1.png) no-repeat center center;
+            border-radius: 50%;
+        }
+        .selected{
+            background: url(../../assets/image/aside_2.png) no-repeat center center;
+        }
+    }
 }

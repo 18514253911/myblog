@@ -23,6 +23,7 @@ export class ngFullpageDirective implements OnInit,AfterViewInit  {
         let _this=this;
         this.itv = setTimeout(function() {
             var delta = e.wheelDelta / 120 || -e.deltaY / 3;
+            _this.page = _this.fullPageService.scrollTop(null)/_this.height | 0;
             _this.page -= delta;
             var max = (document.body.scrollHeight / _this.height | 0) - 1;
             if (_this.page < 0) return _this.page = 0;
@@ -34,30 +35,6 @@ export class ngFullpageDirective implements OnInit,AfterViewInit  {
     constructor(private el: ElementRef,public fullPageService:FullPageService) { 
        
     }
-    // move(){
-    //     var value = this.height * this.page;
-    //     var diff = this.scrollTop(null) - value;
-    //     let _this=this;
-    //     (function callee() {
-    //         diff = diff / 1.2 | 0;
-    //         _this.scrollTop(value + diff);
-    //         if (diff){
-    //             _this.itv = setTimeout(callee, 16);
-    //         }else{
-    //             _this.afterEvent();
-    //         }
-            
-    //     })();
-    // }
-    
-    // scrollTop(value) {
-    //     if (value == null){
-    //         return Math.max(document.body.scrollTop);
-    //     } 
-    //     else{
-    //        document.body.scrollTop = value;
-    //     } 
-    // }
     public afterEvent(){
         this.after.emit();
     }

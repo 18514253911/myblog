@@ -11,14 +11,15 @@ import { appRoutes } from './app.routes';
 import {ngFullpageDirective} from './directive/fullpage.directive';
 import {FullPageService} from './servive/fullpage.service';
 import {ScrollTo} from './directive/scrollTo.directive';
-
+import {JottingsComponent} from './jottings/jottings.component'
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent, 
     CompatibilityComponent,
     ngFullpageDirective,
-    ScrollTo
+    ScrollTo,
+    JottingsComponent
   ],
   imports: [
     BrowserModule,

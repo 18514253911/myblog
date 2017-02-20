@@ -3,7 +3,8 @@
         <div id="home_content">
             <div id="home-head">
                 <div id="home_head_content">
-                    <img id="home_photo" src="../../assets/image/photo1.jpg" alt="">
+                    <img class="home_photo" src="../../assets/image/photo1.jpg" alt="">
+                    <img id="my-photo" class="home_photo" src="../../assets/image/photo2.jpg" alt="">
                 </div>
             </div>
             <p id="head-motto" class="home-info-introduce"> 努力不一定成功，但不努力一定不会成功</p>
@@ -28,21 +29,17 @@
     </div>
 </div>
 <ul>
-    <!--<li (click)="ngClick(0)">1</li>
-    <li (click)="ngClick(1)">2</li>
-    <li (click)="ngClick(2)">3</li>
-    <li (click)="ngClick(3)">4</li>-->
     <li>
-        <a scrollTo href="#a">1</a>
+        <a [ngClass]="{'selected': select.a}" scrollTo href="#a" (click)='ngClick(0)'></a>
     </li>
     <li>
-        <a scrollTo href="#b">2</a>
+        <a [ngClass]="{'selected': select.b}" scrollTo href="#b" (click)='ngClick(1)'></a>
     </li>
     <li>
-        <a scrollTo href="#c">3</a>
+        <a [ngClass]="{'selected': select.c}" scrollTo href="#c" (click)='ngClick(2)'></a>
     </li>
     <li>
-        <a scrollTo href="#d">4</a>
+        <a [ngClass]="{'selected': select.d}" scrollTo href="#d" (click)='ngClick(3)'></a>
     </li>
 
 </ul>

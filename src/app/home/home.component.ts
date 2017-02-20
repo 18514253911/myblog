@@ -14,9 +14,44 @@ export class HomeComponent  implements OnInit {
    ngOnInit():void{
      
    }
+   select={
+        a:true,
+        b:false,
+        c:false,
+        d:false
+    }
+
    public after;
-   
+  setSelect(index){
+     switch(index){
+         case 0:
+            this.select.a=true;
+            this.select.b=false;
+            this.select.c=false;
+            this.select.d=false;
+         break;
+         case 1:
+            this.select.a=false;
+            this.select.b=true;
+            this.select.c=false;
+            this.select.d=false;
+         break;
+         case 2:
+            this.select.a=false;
+            this.select.b=false;
+            this.select.c=true;
+            this.select.d=false;
+         break;
+         case 3:
+            this.select.a=false;
+            this.select.b=false;
+            this.select.c=false;
+            this.select.d=true;
+         break;
+     }
+  }
   public doAfteer(index:number){
+    this.setSelect(index);
     if(index===0){
         document.getElementById("home-head").style.marginTop='100px';
         document.getElementById("head-motto").style.opacity="1";
@@ -35,8 +70,8 @@ export class HomeComponent  implements OnInit {
     }
      
    }
-   ngClick(value){
-      this.fullPageService.move(770,value,this.after,this);
+   ngClick(index){
+      this.setSelect(index);
    }
    
 }

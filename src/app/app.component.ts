@@ -13,13 +13,14 @@ export class AppComponent {
       display:"首页",
       path:"home"
   },{
-      display:"个人博客",
-      path:"home"
+      display:"随笔",
+      path:"jottings"
   },{
-      display:"兼容性",
+      display:"兼容性问题收集",
       path:"compatibility"
   },{
       display:"js设计模式",
       path:"home"
   }]
+ 
 }

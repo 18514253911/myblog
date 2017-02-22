@@ -1,5 +1,5 @@
 <div ngFullpage (after)="doAfteer($event)">
-    <div id="a" class="home-item" [ngStyle]="{'height': height+'px'}">
+    <div id="first-page" class="home-item" [ngStyle]="{'height': height+'px'}">
         <div id="home_content">
             <div id="home-head">
                 <div id="home_head_content">
@@ -15,31 +15,34 @@
                 <p class="home-info-introduce" id="home_info4">last513894105@163.com</p>
             </div>
         </div>
-
+    </div>
+    <div id="second-page" class="home-item" [ngStyle]="{'height': height+'px'}">
+        <div class="about_content">
+            <div class="about-me">
+                <h1>关于我</h1>
+            </div>
+        </div>
+       
+    </div>
+    <div id="third-page" class="home-item" [ngStyle]="{'height': height+'px'}">
 
     </div>
-    <div id="b" class="home-item" [ngStyle]="{'height': height+'px'}">
-
-    </div>
-    <div id="c" class="home-item" [ngStyle]="{'height': height+'px'}">
-
-    </div>
-    <div id="d" class="home-item" [ngStyle]="{'height': height+'px'}">
+    <div id="fourth-page" class="home-item" [ngStyle]="{'height': height+'px'}">
 
     </div>
 </div>
 <ul>
     <li>
-        <a [ngClass]="{'selected': select.a}" scrollTo href="#a" (click)='ngClick(0)'></a>
+        <a [ngClass]="{'selected': select.a}" scrollTo href="#first-page" (click)='ngClick(0)'></a>
     </li>
     <li>
-        <a [ngClass]="{'selected': select.b}" scrollTo href="#b" (click)='ngClick(1)'></a>
+        <a [ngClass]="{'selected': select.b}" scrollTo href="#second-page" (click)='ngClick(1)'></a>
     </li>
     <li>
-        <a [ngClass]="{'selected': select.c}" scrollTo href="#c" (click)='ngClick(2)'></a>
+        <a [ngClass]="{'selected': select.c}" scrollTo href="#third-page" (click)='ngClick(2)'></a>
     </li>
     <li>
-        <a [ngClass]="{'selected': select.d}" scrollTo href="#d" (click)='ngClick(3)'></a>
+        <a [ngClass]="{'selected': select.d}" scrollTo href="#fourth-page" (click)='ngClick(3)'></a>
     </li>
 
 </ul>

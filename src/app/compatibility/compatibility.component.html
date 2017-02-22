@@ -1,3 +1,8 @@
-<div id="compatibility-content">
+<!--<div id="compatibility-content">
 
-</div>
+</div>-->
+<ul style="top:100px;position: relative;">
+    <li *ngFor="let hero of heroes" [@heroState]="hero.state" (click)="toggleState(hero)">
+        {{hero.name}}
+    </li>
+</ul>
